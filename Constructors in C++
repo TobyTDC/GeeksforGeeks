@@ -61,3 +61,49 @@ Answer: (C)
 Explanation: There is compiler error in line “Point p1;”. The class Point doesn’t have a constructor without any parameter. If we write any constructor, then compiler doesn’t create the default constructor.
 
 It is not true other way, i.e., if we write a default or parameterized constructor, then compiler creates a copy constructor. See the next question.
+
+
+
+
+
+Predict the output of following program.
+
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+ 
+class Test
+{
+public:
+   Test()
+   { cout << "Constructor called"; }
+};
+ 
+int main()
+{
+    Test *t = (Test *) malloc(sizeof(Test));
+    return 0;
+}
+Run on IDE
+(A) Constructor called
+(B) Empty
+(C) Compiler Error
+(D) Runtime error
+
+
+Answer: (B) 
+
+
+     NEW	                                                                      MALLOC
+calls constructor	                                                    doesnot calls constructors
+It is an operator	                                                       It is a function
+Returns exact data type	                                                     Returns void *
+on failure, Throws	                                                      On failure, returns NULL
+Memory allocated from free store	                                    Memory allocated from heap
+can be overridden	                                                       cannot be overridden
+size is calculated by compiler	                                        size is calculated manually
+
+
+
+
+
