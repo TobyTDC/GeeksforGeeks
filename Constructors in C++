@@ -241,3 +241,24 @@ int main()
 }
 The reason is simple, if we don’t pass by reference, then argument p1 will be copied to p. So there will be a copy constructor call to call the copy constructor, which is not possible.
 
+
+
+
+
+Which of the following is true about constructors.
+1) They cannot be virtual.
+2) They cannot be private.
+3) They are automatically called by new operator.
+(A) All 1, 2, and 3
+(B) Only 1 and 3
+(C) Only 1 and 2
+(D) Only 2 and 3
+
+
+Answer: (B) 
+
+Explanation: 1) True: Virtual constructors don’t make sense, it is meaningless to the C++ compiler to create an object polymorphically.
+
+2) False: Constructors can be private, for example, we make copy constructors private when we don’t want to create copyable objects. The reason for not making copyable object could be to avoid shallow copy.
+
+3) True: Constructors are automatically called by new operator, we can in-fact pass parameters to constructors.
