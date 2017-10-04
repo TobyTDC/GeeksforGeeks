@@ -187,3 +187,57 @@ So str pointers of both s1 and s2 point to the same location.
 There must be a user defined copy constructor in classes with pointers ot dynamic memory allocation.
 
 
+
+
+
+Predict the output of following program.
+
+#include<iostream>
+using namespace std;
+class Point {
+    int x;
+public:
+    Point(int x) { this->x = x; }
+    Point(const Point p) { x = p.x;}
+    int getX() { return x; }
+};
+ 
+int main()
+{
+   Point p1(10);
+   Point p2 = p1;
+   cout << p2.getX();
+   return 0;
+}
+Run on IDE
+(A) 10
+(B) Compiler Error: p must be passed by reference
+(C) Garbage value
+(D) None of the above
+
+
+Answer: (B) 
+
+Explanation: Objects must be passed by reference in copy constructors. Compiler checks for this and produces compiler error if not passed by reference.
+
+The following program compiles fine and produces output as 10.
+
+#include <iostream >
+using namespace std;
+class Point {
+    int x;
+public:
+    Point(int x) { this->x = x; }
+    Point(const Point &p) { x = p.x;}
+    int getX() { return x; }
+};
+
+int main()
+{
+   Point p1(10);
+   Point p2 = p1;
+   cout << p2.getX();
+   return 0;
+}
+The reason is simple, if we don’t pass by reference, then argument p1 will be copied to p. So there will be a copy constructor call to call the copy constructor, which is not possible.
+
