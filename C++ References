@@ -26,5 +26,31 @@ Since x is incremented in every function call, it becomes 9 after f(x, 2) call. 
 
 
 
+#include<iostream>
+using namespace std;
+ 
+int &fun()
+{
+    int x = 10;
+    return x;
+}
+int main()
+{
+    fun() = 30;
+    cout << fun();
+    return 0;
+}
+Run on IDE
+(A) May cause runtime error
+(B) May cause compiler error
+(C) Always works fine.
+(D) 0
+
+
+Answer: (A) 
+
+Explanation: Since we return reference to a local variable, the memory location becomes invalid after function call is over. Hence it may result in segmentation fault runtime error.
+
+
 
 
