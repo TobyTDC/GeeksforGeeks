@@ -1,0 +1,22 @@
+Output of following program?
+
+#include<iostream>
+using namespace std;
+class Point {
+    Point() { cout << "Constructor called"; }
+};
+ 
+int main()
+{
+   Point t1;
+   return 0;
+}
+Run on IDE
+(A) Compiler Error
+(B) Runtime Error
+(C) Constructor called
+
+
+Answer: (A) 
+
+Explanation: By default all members of a class are private. Since no access specifier is there for Point(), it becomes private and it is called outside the class when t1 is constructed in main. 
