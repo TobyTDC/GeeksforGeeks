@@ -54,3 +54,42 @@ Explanation: Since we return reference to a local variable, the memory location 
 
 
 
+Output of following C++ program?
+
+#include<iostream>
+using namespace std;
+ 
+int main()
+{
+  int x = 10;
+  int& ref = x;
+  ref = 20;
+  cout << "x = " << x << endl ;
+  x = 30;
+  cout << "ref = " << ref << endl;
+  return 0;
+}
+Run on IDE
+(A)
+
+x = 20
+ref = 30
+(B)
+
+x = 20
+ref = 20
+(C)
+
+x = 10
+ref = 30
+(D)
+
+x = 30
+ref = 30
+
+Answer: (A) 
+
+Explanation: ref is an alias of x, so if we change either of them, we can see the change in other as well.
+
+
+
