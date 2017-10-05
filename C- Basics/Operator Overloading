@@ -1,0 +1,32 @@
+How can we restrict dynamic allocation of objects of a class using new?
+(A) By overloading new operator
+(B) By making an empty private new operator.
+(C) By making an empty private new and new[] operators
+(D) By overloading new operator and new[] operators
+
+
+Answer: (C) 
+
+Explanation: If we declare new and [] new operators, then the objects cannot be created anywhere (within the class and outside the class)
+See the following example. We can not allocate an object of type Test using new.
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+class Test {
+private:
+    void* operator new(size_t size) {}
+    void* operator new[](size_t size) {}
+};
+
+int main()
+{
+    Test *obj = new Test;
+    Test *arr = new Test[10];
+    return 0;
+}
+
+
