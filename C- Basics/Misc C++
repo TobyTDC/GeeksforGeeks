@@ -133,3 +133,32 @@ int main()
 
 
 
+Would destructor be called, if yes, then due to which vector?
+
+#include <iostream>
+#include <vector>
+using namespace std;
+ 
+class a
+{
+public :
+    ~a()
+    {
+        cout << "destroy";
+    }
+};
+int main()
+{
+   vector <a*> *v1  = new vector<a*>;
+   vector <a> *v2  = new vector<a>;
+   return 0;
+}
+Run on IDE
+(A) v1
+(B) v2
+(C) v1 and v2
+(D) no destructor call
+
+
+
+
