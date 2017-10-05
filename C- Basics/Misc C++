@@ -41,3 +41,42 @@ Explanation: The value of ::x is 1.
 
 The scope resolution operator when used with a variable name, always refers to global variable.
 
+
+
+
+
+#include<iostream>
+using namespace std;
+ 
+union A {
+  int a;
+  unsigned int b;
+  A() { a = 10; }
+  unsigned int getb() {return b;}
+};
+ 
+int main()
+{
+    A obj;
+    cout << obj.getb();
+    return 0;
+}
+Run on IDE
+(A) Compiler Error: union can’t have functions
+(B) Compiler Error: can’t access private members of A
+(C) 10
+(D) garbage value
+
+
+Answer: (C) 
+
+Explanation: Like struct and class, union can have methods. Like struct and unlike class, members of union are public by default.
+
+Since data members of union share memory, the value of b becomes same as a.
+
+
+
+
+
+
+
