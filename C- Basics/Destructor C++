@@ -1,0 +1,38 @@
+Predict the output of following C++ progran
+
+#include <iostream>
+using namespace std;
+  
+int i;
+  
+class A
+{
+public:
+    ~A()
+    {
+        i=10;
+    }
+};
+  
+int foo()
+{
+    i=3;
+    A ob;
+    return i;
+}
+  
+int main()
+{
+    cout << foo() << endl;
+    return 0;
+}
+Run on IDE
+(A) 0
+(B) 3
+(C) 10
+(D) None of the above
+
+
+Answer: (B) 
+
+Explanation: While returning from a function, destructor is the last method to be executed. The destructor for the object “ob” is called after the value of i is copied to the return value of the function. So, before destructor could change the value of i to 10, the current value of i gets copied & hence the output is i = 3. See this for more details.
