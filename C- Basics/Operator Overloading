@@ -91,3 +91,49 @@ int main()
 
 
 
+How does C++ compiler differs between overloaded postfix and prefix operators?
+(A) C++ doesn’t allow both operators to be overlaoded in a class
+(B) A postfix ++ has a dummy parameter
+(C) A prefix ++ has a dummy parameter
+(D) By making prefix ++ as a global function and postfix as a member function.
+
+
+Answer: (B) 
+
+Explanation: See the following example:
+
+class Complex
+{
+private:
+    int real;
+    int imag;
+public:
+    Complex(int r, int i)  {  real = r;   imag = i; }
+    Complex operator ++(int);
+    Complex & operator ++();
+};
+
+Complex &Complex::operator ++()
+{
+    real++; imag++;
+    return *this;
+}
+
+Complex Complex::operator ++(int i)
+{
+    Complex c1(real, imag);
+    real++; imag++;
+    return c1;
+}
+
+int main()
+{
+    Complex c1(10, 15);
+    c1++; 
+    ++c1;
+    return 0;
+}
+
+
+
+
