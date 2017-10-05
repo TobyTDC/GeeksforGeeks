@@ -183,3 +183,28 @@ Answer: (C)
 
 Explanation: The correct answer is c. In C++ all the uninitialized global variables are initialized to 0.
 
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+int main ()
+{
+       int cin;
+       cin >> cin;
+       cout << "cin" << cin;
+       return 0;
+}
+Run on IDE
+Thanks to Gokul Kumar for contributing this question.
+(A) error in using cin keyword
+(B) cin+junk value
+(C) cin+input
+(D) Runtime error
+
+
+Answer: (B) 
+
