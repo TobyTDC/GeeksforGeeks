@@ -162,3 +162,24 @@ Run on IDE
 
 
 
+
+#include<iostream>
+using namespace std;
+ 
+int x[100];
+int main()
+{
+    cout << x[99] << endl;
+}
+Run on IDE
+This question is contributed by Sudheendra Baliga
+(A) Unpredictable
+(B) Runtime error
+(C) 0
+(D) 99
+
+
+Answer: (C) 
+
+Explanation: The correct answer is c. In C++ all the uninitialized global variables are initialized to 0.
+
