@@ -1,0 +1,13 @@
+Inline functions are useful when
+(A) Function is large with many nested loops
+(B) Function has many static variables
+(C) Function is small and we want to avoid function call overhead.
+(D) None of the above
+
+
+Answer: (C) 
+
+Explanation: Inline functions are generally used in place of small macros. They are substitute to macros and better than macros. See following for details.
+http://en.wikipedia.org/wiki/Inline_function#Comparison_with_macros
+
+
