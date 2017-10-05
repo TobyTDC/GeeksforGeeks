@@ -11,3 +11,33 @@ Explanation: Inline functions are generally used in place of small macros. They 
 http://en.wikipedia.org/wiki/Inline_function#Comparison_with_macros
 
 
+
+#include<iostream>
+using namespace std;
+int x = 1;
+void fun()
+{
+    int x = 2;
+    {
+        int x = 3;
+        cout << ::x << endl;
+    }
+}
+int main()
+{
+    fun();
+    return 0;
+}
+Run on IDE
+(A) 1
+(B) 2
+(C) 3
+(D) 0
+
+
+Answer: (A) 
+
+Explanation: The value of ::x is 1.
+
+The scope resolution operator when used with a variable name, always refers to global variable.
+
