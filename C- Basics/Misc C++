@@ -78,5 +78,17 @@ Since data members of union share memory, the value of b becomes same as a.
 
 
 
+Which of the following is true about inline functions and macros.
+(A) Inline functions do type checking for parameters, macros don’t
+(B) Macros are processed by pre-processor and inline functions are processed in later stages of compilation.
+(C) Macros cannot have return statement, inline functions can.
+(D) Macros are prone to bugs and errors, inline functions are not.
+(E) All of the above
+
+
+Answer: (E) 
+
+
+
 
 
