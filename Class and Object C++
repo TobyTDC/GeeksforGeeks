@@ -118,3 +118,41 @@ int main()
   
     return 0;
 }
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+ 
+class Test
+{
+    static int x;
+    int *ptr;
+    int y;
+};
+ 
+int main()
+{
+    Test t;
+    cout << sizeof(t) << " ";
+    cout << sizeof(Test *);
+}
+Run on IDE
+(A) 12 4
+(B) 12 12
+(C) 8 4
+(D) 8 8
+
+
+Answer: (C) 
+
+Explanation: For a compiler where pointers take 4 bytes, the statement “sizeof(Test *)” returns 4 (size of the pointer ptr).
+
+The statement “sizeof(t)” returns 8. Since static is not associated with each object of the class, we get (8 not 12). 
+
+
+
